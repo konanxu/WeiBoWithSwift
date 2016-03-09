@@ -15,10 +15,10 @@ class MainViewController: UITabBarController {
         
         tabBar.tintColor = UIColor.orangeColor()
         
-        addViewController(HomeTableViewController(), title: "首页", imageNmae: "tabbar_home")
-        addViewController(MessageTableViewController(), title: "消息", imageNmae: "tabbar_message_center")
-        addViewController(DiscoverTableViewController(), title: "广场", imageNmae: "tabbar_discover")
-        addViewController(ProfileTableViewController(), title: "我", imageNmae: "tabbar_profile")
+        addViewController("HomeTableViewController", title: "首页", imageNmae: "tabbar_home")
+        addViewController("MessageTableViewController", title: "消息", imageNmae: "tabbar_message_center")
+        addViewController("DiscoverTableViewController", title: "广场", imageNmae: "tabbar_discover")
+        addViewController("ProfileTableViewController", title: "我", imageNmae: "tabbar_profile")
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,13 +32,31 @@ class MainViewController: UITabBarController {
      - parameter title:               控制器title
      - parameter imageNmae:           图片名
      */
-    private func addViewController(childViewController:UIViewController,title:String,imageNmae:String){
-        childViewController.tabBarItem.image = UIImage(named: imageNmae)
-        childViewController.tabBarItem.selectedImage = UIImage(named: imageNmae + "_highlighted")
-        childViewController.title = title
+    private func addViewController(childViewControllerName:String,title:String,imageNmae:String){
+        
+        
+        //动态获取命名空间
+        
+        let nameSpace = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
+        
+        print(nameSpace)
+        let cls:AnyClass? = NSClassFromString(nameSpace + "." + childViewControllerName)
+        print(cls)
+        
+        //将anyClass转为指定的UIViewController类型
+        let vcCls = cls as! UIViewController.Type
+        
+        //通过类创建对象
+        let vc = vcCls.init()
+        
+        
+        vc.tabBarItem.image = UIImage(named: imageNmae)
+        vc.tabBarItem.selectedImage = UIImage(named: imageNmae + "_highlighted")
+        vc.title = title
         let nav = UINavigationController()
-        nav.addChildViewController(childViewController)
+        nav.addChildViewController(vc)
         addChildViewController(nav)
+        
     }
     
     /*

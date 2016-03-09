@@ -17,6 +17,7 @@
 		2FCFBAA41C8F2BEC001E7873 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAA31C8F2BEC001E7873 /* MessageTableViewController.swift */; };
 		2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAA51C8F2BFC001E7873 /* ProfileTableViewController.swift */; };
 		2FCFBAA81C8F2C22001E7873 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAA71C8F2C22001E7873 /* DiscoverTableViewController.swift */; };
+		2FCFBAAB1C8FC4D6001E7873 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2FCFBAA31C8F2BEC001E7873 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAA51C8F2BFC001E7873 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAA71C8F2C22001E7873 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		2FCFBA9B1C8F2A69001E7873 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2FCFBAA91C8FC4D6001E7873 /* Resource */,
 				2FCFBA9F1C8F2B38001E7873 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -196,6 +199,14 @@
 			children = (
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		2FCFBAA91C8FC4D6001E7873 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCFBAAB1C8FC4D6001E7873 /* MainVCSettings.json in Resources */,
 				2FCFBA711C8F1D0F001E7873 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
