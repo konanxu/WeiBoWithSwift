@@ -9,16 +9,37 @@
 import UIKit
 
 class MainViewController: UITabBarController {
-
+    var arrData = NSArray?()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor.orangeColor()
         
-        addViewController("HomeTableViewController", title: "首页", imageNmae: "tabbar_home")
-        addViewController("MessageTableViewController", title: "消息", imageNmae: "tabbar_message_center")
-        addViewController("DiscoverTableViewController", title: "广场", imageNmae: "tabbar_discover")
-        addViewController("ProfileTableViewController", title: "我", imageNmae: "tabbar_profile")
+        let jsonPath = NSBundle.mainBundle().pathForResource("MainVCSettings", ofType: "json")
+        if let pathStr = jsonPath{
+            let data = NSData(contentsOfFile: pathStr)
+            do{
+                //可能发生异常的代码
+                //try ：发生异常跳到catch中
+                //try :发生异常崩溃
+                let arr = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                
+                for dict in arr as! [[String: String]]{
+                    addViewController(String(dict["vcName"]!), title: String(dict["title"]!), imageNmae: String(dict["imageName"]!))
+                }
+                
+            }catch{
+                addViewController("HomeTableViewController", title: "首页", imageNmae: "tabbar_home")
+                addViewController("MessageTableViewController", title: "消息", imageNmae: "tabbar_message_center")
+                addViewController("DiscoverTableViewController", title: "广场", imageNmae: "tabbar_discover")
+                addViewController("ProfileTableViewController", title: "我", imageNmae: "tabbar_profile")
+                print(error)
+            }
+            
+        
+        }
+        
+
     }
 
     override func didReceiveMemoryWarning() {
