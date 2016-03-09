@@ -1,15 +1,27 @@
 //
-//  ProfileTableViewController.swift
+//  BaseTableViewController.swift
 //  WeiBo
 //
-//  Created by Konan on 16/3/8.
+//  Created by Konan on 16/3/9.
 //  Copyright © 2016年 Konan. All rights reserved.
 //
 
 import UIKit
 
-class ProfileTableViewController: BaseTableViewController {
+class BaseTableViewController: UITableViewController {
 
+    var userLogin = false
+    
+    override func loadView() {
+        userLogin ? super.loadView() : setupVistorView()
+        
+    }
+    private func setupVistorView(){
+        let customview = VistorView()
+        customview.backgroundColor = UIColor.whiteColor()
+        view = customview
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

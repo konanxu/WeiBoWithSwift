@@ -18,6 +18,9 @@
 		2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAA51C8F2BFC001E7873 /* ProfileTableViewController.swift */; };
 		2FCFBAA81C8F2C22001E7873 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAA71C8F2C22001E7873 /* DiscoverTableViewController.swift */; };
 		2FCFBAAB1C8FC4D6001E7873 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */; };
+		2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */; };
+		2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */; };
+		2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAB01C9067C8001E7873 /* VistorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		2FCFBAA51C8F2BFC001E7873 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAA71C8F2C22001E7873 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		2FCFBAB01C9067C8001E7873 /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,9 @@
 			children = (
 				2FCFBAA91C8FC4D6001E7873 /* Resource */,
 				2FCFBA9F1C8F2B38001E7873 /* MainViewController.swift */,
+				2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */,
+				2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */,
+				2FCFBAB01C9067C8001E7873 /* VistorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -340,11 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */,
 				2FCFBAA81C8F2C22001E7873 /* DiscoverTableViewController.swift in Sources */,
 				2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */,
 				2FCFBAA21C8F2BDD001E7873 /* HomeTableViewController.swift in Sources */,
 				2FCFBAA01C8F2B38001E7873 /* MainViewController.swift in Sources */,
 				2FCFBAA41C8F2BEC001E7873 /* MessageTableViewController.swift in Sources */,
+				2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */,
+				2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */,
 				2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */,
 				2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */,
 			);
@@ -560,6 +572,7 @@
 				2FCFBA901C8F1D0F001E7873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FCFBA911C8F1D0F001E7873 /* Build configuration list for PBXNativeTarget "WeiBoTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +581,7 @@
 				2FCFBA931C8F1D0F001E7873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FCFBA941C8F1D0F001E7873 /* Build configuration list for PBXNativeTarget "WeiBoUITests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +590,7 @@
 				2FCFBA961C8F1D0F001E7873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

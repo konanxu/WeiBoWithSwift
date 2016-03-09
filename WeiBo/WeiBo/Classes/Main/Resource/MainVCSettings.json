@@ -8,7 +8,12 @@
     "imageName" : "tabbar_message_center",
     "title" : "消息",
     "vcName" : "MessageTableViewController"
-  },
+ },
+ {
+ "imageName" : "",
+ "title" : "",
+ "vcName" : "NullViewController"
+ },
   {
     "imageName" : "tabbar_discover",
     "title" : "广场",
