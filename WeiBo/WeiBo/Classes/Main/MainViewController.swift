@@ -16,9 +16,9 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = UIColor.orangeColor()
         
         addViewControllers()
+        
     }
     
     
@@ -27,6 +27,7 @@ class MainViewController: UITabBarController {
         
         //添加加好按钮
         setupComposeBtn()
+        
     }
     
     

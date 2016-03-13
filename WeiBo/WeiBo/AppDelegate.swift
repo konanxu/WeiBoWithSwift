@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
         return true
     }
 

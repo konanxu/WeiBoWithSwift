@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8879791C953B5C00B484D5 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8879781C953B5C00B484D5 /* UIBarButtonItem+Category.swift */; };
 		2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */; };
 		2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA6B1C8F1D0F001E7873 /* ViewController.swift */; };
 		2FCFBA711C8F1D0F001E7873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FCFBA701C8F1D0F001E7873 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */; };
 		2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */; };
 		2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAB01C9067C8001E7873 /* VistorView.swift */; };
+		3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3033409625F5ADD5A755790B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		199C6ACC8B680CBE4047C4E6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2F8879781C953B5C00B484D5 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		2FCFBA661C8F1D0F001E7873 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FCFBA6B1C8F1D0F001E7873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAB01C9067C8001E7873 /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
+		3033409625F5ADD5A755790B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +102,8 @@
 				2FCFBA7D1C8F1D0F001E7873 /* WeiBoTests */,
 				2FCFBA881C8F1D0F001E7873 /* WeiBoUITests */,
 				2FCFBA671C8F1D0F001E7873 /* Products */,
+				EA2F10D07BE81A043871F236 /* Pods */,
+				E56568F9D50ACC457A7321B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +164,7 @@
 		2FCFBA981C8F2A69001E7873 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2F8879781C953B5C00B484D5 /* UIBarButtonItem+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -218,6 +228,23 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		E56568F9D50ACC457A7321B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3033409625F5ADD5A755790B /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA2F10D07BE81A043871F236 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */,
+				199C6ACC8B680CBE4047C4E6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FCFBA8E1C8F1D0F001E7873 /* Build configuration list for PBXNativeTarget "WeiBo" */;
 			buildPhases = (
+				1FD297F053F0B8AF34E3F223 /* Check Pods Manifest.lock */,
 				2FCFBA621C8F1D0F001E7873 /* Sources */,
 				2FCFBA631C8F1D0F001E7873 /* Frameworks */,
 				2FCFBA641C8F1D0F001E7873 /* Resources */,
+				7CFD17DDF3515BE8D33CFD0A /* Embed Pods Frameworks */,
+				617850DF03CED33C6B5F256B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +374,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FD297F053F0B8AF34E3F223 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		617850DF03CED33C6B5F256B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CFD17DDF3515BE8D33CFD0A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2FCFBA621C8F1D0F001E7873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -354,6 +432,7 @@
 				2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */,
 				2FCFBAA21C8F2BDD001E7873 /* HomeTableViewController.swift in Sources */,
 				2FCFBAA01C8F2B38001E7873 /* MainViewController.swift in Sources */,
+				2F8879791C953B5C00B484D5 /* UIBarButtonItem+Category.swift in Sources */,
 				2FCFBAA41C8F2BEC001E7873 /* MessageTableViewController.swift in Sources */,
 				2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */,
 				2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */,
@@ -479,12 +558,13 @@
 		};
 		2FCFBA8F1C8F1D0F001E7873 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konanxu.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,12 +573,13 @@
 		};
 		2FCFBA901C8F1D0F001E7873 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 199C6ACC8B680CBE4047C4E6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konanxu.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

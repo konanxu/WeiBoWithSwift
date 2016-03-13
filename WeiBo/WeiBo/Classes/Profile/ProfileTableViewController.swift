@@ -18,6 +18,10 @@ class ProfileTableViewController: BaseTableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        if !userLogin{
+            vistorView!.setUpInfo(false, imageName: "visitordiscover_image_profile"  , message: "profile")
+        }
     }
 
     override func didReceiveMemoryWarning() {

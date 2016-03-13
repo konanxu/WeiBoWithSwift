@@ -18,10 +18,34 @@ class HomeTableViewController: BaseTableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
+        if !userLogin{
+           vistorView!.setUpInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+           return
+        }
+        setupNav()
     }
+    
+    
+    private func setupNav(){
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButton("navigationbar_friendattention", target: self, action: "friendClick")
+        
+       navigationItem.rightBarButtonItem =  UIBarButtonItem.createBarButton("navigationbar_pop", target: self, action: "qCodeClick")
 
+    }
+    
+    func friendClick(){
+        print(__FUNCTION__)
+    }
+    func qCodeClick(){
+        print(__FUNCTION__)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if !userLogin{
+         vistorView!.centerViewUpdateConstraints()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

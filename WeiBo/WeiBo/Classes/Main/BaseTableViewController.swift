@@ -10,8 +10,8 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
 
-    var userLogin = false
-    
+    var userLogin = true
+    var vistorView: VistorView?
     override func loadView() {
         userLogin ? super.loadView() : setupVistorView()
         
@@ -20,6 +20,13 @@ class BaseTableViewController: UITableViewController {
         let customview = VistorView()
         customview.backgroundColor = UIColor.whiteColor()
         view = customview
+        view.backgroundColor = UIColor(colorLiteralRed: 237/255.0, green: 237/255.0, blue: 237/255.0, alpha: 1)
+        vistorView = customview
+        vistorView?.delegate = self
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewRegisterClick")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewLoginClick")
     }
     
     override func viewDidLoad() {
@@ -105,3 +112,12 @@ class BaseTableViewController: UITableViewController {
     */
 
 }
+extension BaseTableViewController:vistorViewDelegate{
+    func vistorViewRegisterClick() {
+        print("hello")
+    }
+    func vistorViewLoginClick() {
+        print("fuck")
+    }
+}
+
