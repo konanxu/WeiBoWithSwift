@@ -28,10 +28,21 @@ class HomeTableViewController: BaseTableViewController {
     
     private func setupNav(){
         
+        //初始化左右按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButton("navigationbar_friendattention", target: self, action: "friendClick")
         
        navigationItem.rightBarButtonItem =  UIBarButtonItem.createBarButton("navigationbar_pop", target: self, action: "qCodeClick")
-
+        
+        //初始化标题按钮
+        let titleBtn = TitleButton()
+        titleBtn.setTitle("Konan_Xu ", forState: UIControlState.Normal)
+        titleBtn.addTarget(self, action: "titleClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+    
+    func titleClick(btn:TitleButton){
+        print(__FUNCTION__)
+        btn.selected = !btn.selected
     }
     
     func friendClick(){
