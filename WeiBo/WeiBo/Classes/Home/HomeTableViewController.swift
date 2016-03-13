@@ -25,7 +25,7 @@ class HomeTableViewController: BaseTableViewController {
         setupNav()
     }
     
-    
+    let titleBtn = TitleButton()
     private func setupNav(){
         
         //初始化左右按钮
@@ -34,15 +34,31 @@ class HomeTableViewController: BaseTableViewController {
        navigationItem.rightBarButtonItem =  UIBarButtonItem.createBarButton("navigationbar_pop", target: self, action: "qCodeClick")
         
         //初始化标题按钮
-        let titleBtn = TitleButton()
+        
         titleBtn.setTitle("Konan_Xu ", forState: UIControlState.Normal)
         titleBtn.addTarget(self, action: "titleClick:", forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView = titleBtn
+        
+       popoverAnimation.addObserver(self, forKeyPath: "isPresent", options: NSKeyValueObservingOptions.New, context: nil)
+        
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if(keyPath == "isPresent"){
+            titleBtn.selected = !titleBtn.selected
+        }
     }
     
     func titleClick(btn:TitleButton){
         print(__FUNCTION__)
-        btn.selected = !btn.selected
+        
+        
+        //弹出菜单,取出vc 设置转场自定义
+        let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        vc?.transitioningDelegate = popoverAnimation
+        vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
+        presentViewController(vc!, animated: true, completion: nil)
     }
     
     func friendClick(){
@@ -50,6 +66,11 @@ class HomeTableViewController: BaseTableViewController {
     }
     func qCodeClick(){
         print(__FUNCTION__)
+    }
+    
+    deinit{
+        super.viewDidLoad()
+        popoverAnimation.removeObserver(self, forKeyPath: "isPresent")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,60 +94,11 @@ class HomeTableViewController: BaseTableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    private lazy var popoverAnimation:PopoverAnimation  = {
+        let pop = PopoverAnimation()
+        pop.popFrame = CGRect(x: 80, y: 56, width: 150, height: 300)
+        return pop
+    }()
 }
+
+
