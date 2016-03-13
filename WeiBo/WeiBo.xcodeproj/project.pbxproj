@@ -27,6 +27,8 @@
 		2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */; };
 		2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */; };
 		2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAB01C9067C8001E7873 /* VistorView.swift */; };
+		2FD3D3201C95C14D000A28FD /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */; };
+		2FD3D3221C95C164000A28FD /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */; };
 		3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3033409625F5ADD5A755790B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		2FCFBAAC1C8FEAF4001E7873 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		2FCFBAAE1C906554001E7873 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		2FCFBAB01C9067C8001E7873 /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
+		2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
+		2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		3033409625F5ADD5A755790B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +206,7 @@
 		2FCFBA9A1C8F2A69001E7873 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2FD3D31E1C95C108000A28FD /* QRCode */,
 				2F88797C1C958C5700B484D5 /* Popover */,
 				2FCFBAA11C8F2BDD001E7873 /* HomeTableViewController.swift */,
 			);
@@ -249,6 +254,15 @@
 				2FCFBAAA1C8FC4D6001E7873 /* MainVCSettings.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		2FD3D31E1C95C108000A28FD /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */,
+				2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		E56568F9D50ACC457A7321B8 /* Frameworks */ = {
@@ -376,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD3D3201C95C14D000A28FD /* QRCodeViewController.storyboard in Resources */,
 				2F88797E1C958C8800B484D5 /* PopoverViewController.storyboard in Resources */,
 				2FCFBAAB1C8FC4D6001E7873 /* MainVCSettings.json in Resources */,
 				2FCFBA711C8F1D0F001E7873 /* Assets.xcassets in Resources */,
@@ -453,6 +468,7 @@
 			files = (
 				2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */,
 				2FCFBAA81C8F2C22001E7873 /* DiscoverTableViewController.swift in Sources */,
+				2FD3D3221C95C164000A28FD /* QRCodeViewController.swift in Sources */,
 				2F8879801C958D9100B484D5 /* PopoverViewController.swift in Sources */,
 				2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */,
 				2FCFBAA21C8F2BDD001E7873 /* HomeTableViewController.swift in Sources */,

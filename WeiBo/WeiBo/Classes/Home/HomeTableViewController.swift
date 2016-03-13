@@ -33,6 +33,14 @@ class HomeTableViewController: BaseTableViewController {
         
        navigationItem.rightBarButtonItem =  UIBarButtonItem.createBarButton("navigationbar_pop", target: self, action: "qCodeClick")
         
+        
+        let spaRight   = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        spaRight.width = -10
+        navigationItem.setRightBarButtonItems([spaRight,navigationItem.rightBarButtonItem!], animated: true)
+        let spaLeft    = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        spaLeft.width  = -5
+        navigationItem.setLeftBarButtonItems([spaLeft,navigationItem.leftBarButtonItem!], animated: true)
+        
         //初始化标题按钮
         
         titleBtn.setTitle("Konan_Xu ", forState: UIControlState.Normal)
@@ -65,7 +73,10 @@ class HomeTableViewController: BaseTableViewController {
         print(__FUNCTION__)
     }
     func qCodeClick(){
-        print(__FUNCTION__)
+        
+        let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        presentViewController(vc!, animated: true, completion: nil)
     }
     
     deinit{
