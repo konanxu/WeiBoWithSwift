@@ -29,6 +29,10 @@
 		2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBAB01C9067C8001E7873 /* VistorView.swift */; };
 		2FD3D3201C95C14D000A28FD /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */; };
 		2FD3D3221C95C164000A28FD /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */; };
+		2FD3D3251C95CE64000A28FD /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D3241C95CE64000A28FD /* SegueHandlerType.swift */; };
+		2FD3D3271C95D2C2000A28FD /* SegueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D3261C95D2C2000A28FD /* SegueTestViewController.swift */; };
+		2FD3D3291C95D52A000A28FD /* SegueTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */; };
+		2FD3D32B1C9683FC000A28FD /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D32A1C9683FC000A28FD /* QRCodeCardViewController.swift */; };
 		3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3033409625F5ADD5A755790B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +83,10 @@
 		2FCFBAB01C9067C8001E7873 /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
 		2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		2FD3D3241C95CE64000A28FD /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
+		2FD3D3261C95D2C2000A28FD /* SegueTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTestViewController.swift; sourceTree = "<group>"; };
+		2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SegueTestViewController.storyboard; sourceTree = "<group>"; };
+		2FD3D32A1C9683FC000A28FD /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 		3033409625F5ADD5A755790B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +183,7 @@
 		2FCFBA971C8F2A69001E7873 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2FD3D3231C95CE24000A28FD /* Others */,
 				2FCFBA981C8F2A69001E7873 /* Common */,
 				2FCFBA991C8F2A69001E7873 /* Discover */,
 				2FCFBA9A1C8F2A69001E7873 /* Home */,
@@ -261,8 +270,19 @@
 			children = (
 				2FD3D31F1C95C14D000A28FD /* QRCodeViewController.storyboard */,
 				2FD3D3211C95C164000A28FD /* QRCodeViewController.swift */,
+				2FD3D32A1C9683FC000A28FD /* QRCodeCardViewController.swift */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		2FD3D3231C95CE24000A28FD /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2FD3D3241C95CE64000A28FD /* SegueHandlerType.swift */,
+				2FD3D3261C95D2C2000A28FD /* SegueTestViewController.swift */,
+				2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		E56568F9D50ACC457A7321B8 /* Frameworks */ = {
@@ -393,6 +413,7 @@
 				2FD3D3201C95C14D000A28FD /* QRCodeViewController.storyboard in Resources */,
 				2F88797E1C958C8800B484D5 /* PopoverViewController.storyboard in Resources */,
 				2FCFBAAB1C8FC4D6001E7873 /* MainVCSettings.json in Resources */,
+				2FD3D3291C95D52A000A28FD /* SegueTestViewController.storyboard in Resources */,
 				2FCFBA711C8F1D0F001E7873 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,9 +499,12 @@
 				2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */,
 				2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */,
 				2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */,
+				2FD3D3271C95D2C2000A28FD /* SegueTestViewController.swift in Sources */,
+				2FD3D32B1C9683FC000A28FD /* QRCodeCardViewController.swift in Sources */,
 				2F88797B1C9540A200B484D5 /* TitleButton.swift in Sources */,
 				2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */,
 				2F8879841C95A4A000B484D5 /* PopoverAnimation.swift in Sources */,
+				2FD3D3251C95CE64000A28FD /* SegueHandlerType.swift in Sources */,
 				2F8879821C958DC200B484D5 /* PopoverPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

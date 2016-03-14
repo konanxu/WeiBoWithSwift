@@ -26,7 +26,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             </tabBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-Ip-Yo1">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-Ip-Yo1">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border" translatesAutoresizingMaskIntoConstraints="NO" id="yK6-WO-NpH">
@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yK6-WO-NpH" secondAttribute="trailing" id="3hh-E5-KZg"/>
                                     <constraint firstItem="yK6-WO-NpH" firstAttribute="leading" secondItem="Kb3-Ip-Yo1" secondAttribute="leading" id="8bQ-fZ-vG3"/>
@@ -50,15 +50,42 @@
                                     <constraint firstItem="oik-UF-gIW" firstAttribute="top" secondItem="Kb3-Ip-Yo1" secondAttribute="top" id="f9P-na-2Ho"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="bFS-5w-Pid">
+                                <rect key="frame" x="278" y="95" width="43" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="Qrp-ku-dC1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="hLi-oz-q7f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEv-Hc-2ro">
+                                <rect key="frame" x="263.5" y="469" width="72" height="32"/>
+                                <state key="normal" title="我的名片" backgroundImage="qrcode_button_background"/>
+                                <connections>
+                                    <action selector="myCardClick:" destination="Wt5-EP-Pf0" eventType="touchUpInside" id="SuW-ZT-vck"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eEv-Hc-2ro" firstAttribute="centerX" secondItem="CB8-se-5Bi" secondAttribute="centerX" id="463-Fc-TB4"/>
+                            <constraint firstItem="nKb-jW-btg" firstAttribute="top" secondItem="eEv-Hc-2ro" secondAttribute="bottom" constant="50" id="4CT-fe-5pd"/>
+                            <constraint firstItem="bFS-5w-Pid" firstAttribute="top" secondItem="je2-tf-9j6" secondAttribute="bottom" constant="31" id="Bwo-G5-Q1n"/>
                             <constraint firstItem="MeW-Uk-ee3" firstAttribute="top" secondItem="nKb-jW-btg" secondAttribute="bottom" id="N4j-6E-Esj"/>
                             <constraint firstAttribute="trailing" secondItem="nKb-jW-btg" secondAttribute="trailing" id="ggw-pB-l0q"/>
                             <constraint firstItem="nKb-jW-btg" firstAttribute="leading" secondItem="CB8-se-5Bi" secondAttribute="leading" id="oSv-LY-xev"/>
                             <constraint firstItem="Kb3-Ip-Yo1" firstAttribute="centerY" secondItem="CB8-se-5Bi" secondAttribute="centerY" id="rp5-FB-E8s"/>
+                            <constraint firstItem="eEv-Hc-2ro" firstAttribute="centerX" secondItem="CB8-se-5Bi" secondAttribute="centerX" id="rsb-LK-455"/>
                             <constraint firstItem="Kb3-Ip-Yo1" firstAttribute="centerX" secondItem="CB8-se-5Bi" secondAttribute="centerX" id="vPK-n1-4nl"/>
+                            <constraint firstItem="bFS-5w-Pid" firstAttribute="centerX" secondItem="CB8-se-5Bi" secondAttribute="centerX" id="wzU-qd-ms4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rsb-LK-455"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="二维码扫描" id="2Og-Yb-Vqc">
                         <barButtonItem key="leftBarButtonItem" title="关闭" id="BHm-QK-th5">
@@ -66,10 +93,18 @@
                                 <action selector="closeBtnItemClick:" destination="Wt5-EP-Pf0" id="549-8F-dH5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="相册" id="0Wu-9e-14Q"/>
+                        <barButtonItem key="rightBarButtonItem" title="相册" id="0Wu-9e-14Q">
+                            <connections>
+                                <action selector="albumClick:" destination="Wt5-EP-Pf0" id="NVH-2j-bLY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerHeightCons" destination="I1U-3Z-Q8X" id="R1F-MA-MrV"/>
                         <outlet property="customTabBar" destination="nKb-jW-btg" id="19l-vo-xao"/>
+                        <outlet property="resultLabel" destination="bFS-5w-Pid" id="n4e-M2-CVT"/>
+                        <outlet property="scanLine" destination="oik-UF-gIW" id="fuF-rb-FNA"/>
+                        <outlet property="scanLineCons" destination="f9P-na-2Ho" id="bm5-Rc-F9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0py-Ob-w20" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,6 +133,7 @@
     </scenes>
     <resources>
         <image name="qrcode_border" width="51" height="51"/>
+        <image name="qrcode_button_background" width="34" height="32"/>
         <image name="qrcode_scanline_qrcode" width="218" height="170"/>
         <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
         <image name="qrcode_tabbar_icon_barcode_highlighted" width="40" height="40"/>
