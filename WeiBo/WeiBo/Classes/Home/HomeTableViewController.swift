@@ -8,8 +8,17 @@
 
 import UIKit
 
+let kTableViewCellIndentifier = "kTableViewCellIndentifier"
 class HomeTableViewController: BaseTableViewController {
-
+    
+    var statuses:[Status]?
+    {
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +31,28 @@ class HomeTableViewController: BaseTableViewController {
            vistorView!.setUpInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
            return
         }
+        tableView.delegate = self
         setupNav()
+        if userLogin{
+            loadData()
+        }
+        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: kTableViewCellIndentifier)
+//        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
+    
+    private func loadData(){
+        Status.loadStatus { (models, error) -> () in
+            if error != nil{
+                return
+            }
+            self.statuses = models
+        }
+        
+    }
+    
+    
     
     let titleBtn = TitleButton()
     private func setupNav(){
@@ -91,25 +120,51 @@ class HomeTableViewController: BaseTableViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        rowCache.removeAll()
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-    private lazy var popoverAnimation:PopoverAnimation  = {
+        private lazy var popoverAnimation:PopoverAnimation  = {
         let pop = PopoverAnimation()
         pop.popFrame = CGRect(x: 80, y: 56, width: 150, height: 300)
         return pop
     }()
+    
+    
+    var rowCache: [Int: CGFloat] = [Int: CGFloat]()
+    
+}
+extension HomeTableViewController{
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIndentifier, forIndexPath: indexPath) as! StatusTableViewCell
+        cell.status = statuses![indexPath.row]
+//        cell.textLabel?.text = statuses![indexPath.row].text
+//        cell.detailTextLabel?.text = statuses![indexPath.row].user?.name
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let status = statuses![indexPath.row]
+        if let height = rowCache[status.id]
+        {
+            print("从缓存中获取")
+            return height
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIndentifier) as! StatusTableViewCell
+        let height = cell.rowHeight(status)
+        
+        rowCache[status.id] = height
+        print("新的计算")
+        return height
+    }
+
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return statuses?.count ?? 0
+    }
+
 }
 
 

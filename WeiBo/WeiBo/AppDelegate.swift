@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+//        NSUserDefaults.standardUserDefaults().setValue((UserAccount.loadAccount()) != nil ? true : false, forKeyPath: "isLogin")
+//            
+//
+//        NSUserDefaults.standardUserDefaults().synchronize()
+//        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()

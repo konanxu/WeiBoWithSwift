@@ -9,8 +9,10 @@
 import UIKit
 
 class BaseTableViewController: UITableViewController {
+    
+    var userLogin = UserAccount.loadAccount() != nil ? true :false
 
-    var userLogin = true
+    
     var vistorView: VistorView?
     override func loadView() {
         userLogin ? super.loadView() : setupVistorView()
@@ -42,24 +44,7 @@ class BaseTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
+      /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
@@ -118,9 +103,13 @@ class BaseTableViewController: UITableViewController {
 extension BaseTableViewController:vistorViewDelegate{
     func vistorViewRegisterClick() {
         print("hello")
+       let account = UserAccount.loadAccount()
+        print(account)
     }
     func vistorViewLoginClick() {
         print("fuck")
+        let vc = UINavigationController(rootViewController: OAuthViewController())
+        presentViewController(vc, animated: true, completion: nil)
     }
 }
 

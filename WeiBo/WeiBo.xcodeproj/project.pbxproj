@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1508331C9F9A14004E046D /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1508321C9F9A14004E046D /* UIView+Category.swift */; };
+		2F2E21201C9BC40A0025E351 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E211F1C9BC40A0025E351 /* User.swift */; };
+		2F2E21231C9BCD5E0025E351 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E21221C9BCD5E0025E351 /* MyTableViewCell.swift */; };
+		2F2E21251C9BDB940025E351 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E21241C9BDB940025E351 /* StatusTableViewCell.swift */; };
+		2F2E21281C9D5DBE0025E351 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E21271C9D5DBE0025E351 /* NSDate+Category.swift */; };
+		2F6BBCE71C971141007C7B93 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6BBCE61C971141007C7B93 /* Tools.swift */; };
 		2F8879791C953B5C00B484D5 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8879781C953B5C00B484D5 /* UIBarButtonItem+Category.swift */; };
 		2F88797B1C9540A200B484D5 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F88797A1C9540A200B484D5 /* TitleButton.swift */; };
 		2F88797E1C958C8800B484D5 /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F88797D1C958C8800B484D5 /* PopoverViewController.storyboard */; };
 		2F8879801C958D9100B484D5 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F88797F1C958D9100B484D5 /* PopoverViewController.swift */; };
 		2F8879821C958DC200B484D5 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8879811C958DC200B484D5 /* PopoverPresentationController.swift */; };
 		2F8879841C95A4A000B484D5 /* PopoverAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8879831C95A4A000B484D5 /* PopoverAnimation.swift */; };
+		2F8F7D551CA0E2DE00A2B611 /* StatusFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7D541CA0E2DE00A2B611 /* StatusFooterView.swift */; };
+		2F8F7D571CA0E3A200A2B611 /* StatusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7D561CA0E3A200A2B611 /* StatusHeaderView.swift */; };
+		2F8F7D591CA0E9F400A2B611 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7D581CA0E9F400A2B611 /* StatusPictureView.swift */; };
+		2FCB1F051C97AC8700F07D37 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB1F041C97AC8700F07D37 /* OAuthViewController.swift */; };
 		2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */; };
 		2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA6B1C8F1D0F001E7873 /* ViewController.swift */; };
 		2FCFBA711C8F1D0F001E7873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FCFBA701C8F1D0F001E7873 /* Assets.xcassets */; };
@@ -33,6 +43,9 @@
 		2FD3D3271C95D2C2000A28FD /* SegueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D3261C95D2C2000A28FD /* SegueTestViewController.swift */; };
 		2FD3D3291C95D52A000A28FD /* SegueTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */; };
 		2FD3D32B1C9683FC000A28FD /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3D32A1C9683FC000A28FD /* QRCodeCardViewController.swift */; };
+		2FD88B811C97E1320099644A /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B801C97E1320099644A /* NetworkTools.swift */; };
+		2FD88B891C985D9B0099644A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B881C985D9B0099644A /* UserAccount.swift */; };
+		2FD88B8C1C9AA25F0099644A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B8B1C9AA25F0099644A /* Status.swift */; };
 		3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3033409625F5ADD5A755790B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +68,22 @@
 
 /* Begin PBXFileReference section */
 		199C6ACC8B680CBE4047C4E6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2F1508321C9F9A14004E046D /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
+		2F2E211F1C9BC40A0025E351 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2F2E21221C9BCD5E0025E351 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		2F2E21241C9BDB940025E351 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		2F2E21271C9D5DBE0025E351 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		2F6BBCE61C971141007C7B93 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		2F8879781C953B5C00B484D5 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		2F88797A1C9540A200B484D5 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		2F88797D1C958C8800B484D5 /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		2F88797F1C958D9100B484D5 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2F8879811C958DC200B484D5 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		2F8879831C95A4A000B484D5 /* PopoverAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimation.swift; sourceTree = "<group>"; };
+		2F8F7D541CA0E2DE00A2B611 /* StatusFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusFooterView.swift; sourceTree = "<group>"; };
+		2F8F7D561CA0E3A200A2B611 /* StatusHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusHeaderView.swift; sourceTree = "<group>"; };
+		2F8F7D581CA0E9F400A2B611 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		2FCB1F041C97AC8700F07D37 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		2FCFBA661C8F1D0F001E7873 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FCFBA6B1C8F1D0F001E7873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +110,10 @@
 		2FD3D3261C95D2C2000A28FD /* SegueTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTestViewController.swift; sourceTree = "<group>"; };
 		2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SegueTestViewController.storyboard; sourceTree = "<group>"; };
 		2FD3D32A1C9683FC000A28FD /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
+		2FD88B801C97E1320099644A /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		2FD88B871C980D540099644A /* WeiBo-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WeiBo-Bridge.h"; path = "WeiBo/WeiBo-Bridge.h"; sourceTree = "<group>"; };
+		2FD88B881C985D9B0099644A /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		2FD88B8B1C9AA25F0099644A /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		3033409625F5ADD5A755790B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +144,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F2E21211C9BCD4B0025E351 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E21221C9BCD5E0025E351 /* MyTableViewCell.swift */,
+				2F2E21241C9BDB940025E351 /* StatusTableViewCell.swift */,
+				2F8F7D541CA0E2DE00A2B611 /* StatusFooterView.swift */,
+				2F8F7D561CA0E3A200A2B611 /* StatusHeaderView.swift */,
+				2F8F7D581CA0E9F400A2B611 /* StatusPictureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F2E21261C9D5D900025E351 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E21271C9D5DBE0025E351 /* NSDate+Category.swift */,
+				2F1508321C9F9A14004E046D /* UIView+Category.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		2F88797C1C958C5700B484D5 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,9 +176,19 @@
 			path = Popover;
 			sourceTree = "<group>";
 		};
+		2FCB1F031C97AC5D00F07D37 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				2FCB1F041C97AC8700F07D37 /* OAuthViewController.swift */,
+				2FD88B881C985D9B0099644A /* UserAccount.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		2FCFBA5D1C8F1D0F001E7873 = {
 			isa = PBXGroup;
 			children = (
+				2FD88B871C980D540099644A /* WeiBo-Bridge.h */,
 				2FCFBA681C8F1D0F001E7873 /* WeiBo */,
 				2FCFBA7D1C8F1D0F001E7873 /* WeiBoTests */,
 				2FCFBA881C8F1D0F001E7873 /* WeiBoUITests */,
@@ -183,6 +241,7 @@
 		2FCFBA971C8F2A69001E7873 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2FCB1F031C97AC5D00F07D37 /* OAuth */,
 				2FD3D3231C95CE24000A28FD /* Others */,
 				2FCFBA981C8F2A69001E7873 /* Common */,
 				2FCFBA991C8F2A69001E7873 /* Discover */,
@@ -215,6 +274,8 @@
 		2FCFBA9A1C8F2A69001E7873 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2F2E21211C9BCD4B0025E351 /* View */,
+				2FD88B8A1C9AA24D0099644A /* Model */,
 				2FD3D31E1C95C108000A28FD /* QRCode */,
 				2F88797C1C958C5700B484D5 /* Popover */,
 				2FCFBAA11C8F2BDD001E7873 /* HomeTableViewController.swift */,
@@ -253,6 +314,9 @@
 		2FCFBA9E1C8F2A69001E7873 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2F2E21261C9D5D900025E351 /* Category */,
+				2F6BBCE61C971141007C7B93 /* Tools.swift */,
+				2FD88B801C97E1320099644A /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -283,6 +347,15 @@
 				2FD3D3281C95D52A000A28FD /* SegueTestViewController.storyboard */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		2FD88B8A1C9AA24D0099644A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FD88B8B1C9AA25F0099644A /* Status.swift */,
+				2F2E211F1C9BC40A0025E351 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E56568F9D50ACC457A7321B8 /* Frameworks */ = {
@@ -487,25 +560,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8F7D571CA0E3A200A2B611 /* StatusHeaderView.swift in Sources */,
+				2F2E21281C9D5DBE0025E351 /* NSDate+Category.swift in Sources */,
 				2FCFBAAF1C906554001E7873 /* BaseTableViewController.swift in Sources */,
 				2FCFBAA81C8F2C22001E7873 /* DiscoverTableViewController.swift in Sources */,
 				2FD3D3221C95C164000A28FD /* QRCodeViewController.swift in Sources */,
+				2F2E21201C9BC40A0025E351 /* User.swift in Sources */,
 				2F8879801C958D9100B484D5 /* PopoverViewController.swift in Sources */,
 				2FCFBAA61C8F2BFC001E7873 /* ProfileTableViewController.swift in Sources */,
+				2F1508331C9F9A14004E046D /* UIView+Category.swift in Sources */,
 				2FCFBAA21C8F2BDD001E7873 /* HomeTableViewController.swift in Sources */,
 				2FCFBAA01C8F2B38001E7873 /* MainViewController.swift in Sources */,
+				2FD88B891C985D9B0099644A /* UserAccount.swift in Sources */,
+				2FCB1F051C97AC8700F07D37 /* OAuthViewController.swift in Sources */,
+				2F8F7D591CA0E9F400A2B611 /* StatusPictureView.swift in Sources */,
 				2F8879791C953B5C00B484D5 /* UIBarButtonItem+Category.swift in Sources */,
+				2F8F7D551CA0E2DE00A2B611 /* StatusFooterView.swift in Sources */,
 				2FCFBAA41C8F2BEC001E7873 /* MessageTableViewController.swift in Sources */,
+				2FD88B8C1C9AA25F0099644A /* Status.swift in Sources */,
 				2FCFBAAD1C8FEAF4001E7873 /* NullViewController.swift in Sources */,
 				2FCFBAB11C9067C8001E7873 /* VistorView.swift in Sources */,
+				2FD88B811C97E1320099644A /* NetworkTools.swift in Sources */,
 				2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */,
 				2FD3D3271C95D2C2000A28FD /* SegueTestViewController.swift in Sources */,
+				2F2E21251C9BDB940025E351 /* StatusTableViewCell.swift in Sources */,
 				2FD3D32B1C9683FC000A28FD /* QRCodeCardViewController.swift in Sources */,
+				2F2E21231C9BCD5E0025E351 /* MyTableViewCell.swift in Sources */,
 				2F88797B1C9540A200B484D5 /* TitleButton.swift in Sources */,
 				2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */,
 				2F8879841C95A4A000B484D5 /* PopoverAnimation.swift in Sources */,
 				2FD3D3251C95CE64000A28FD /* SegueHandlerType.swift in Sources */,
 				2F8879821C958DC200B484D5 /* PopoverPresentationController.swift in Sources */,
+				2F6BBCE71C971141007C7B93 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +722,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konanxu.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo/WeiBo-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -651,6 +738,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konanxu.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeiBo/WeiBo-Bridge.h";
 			};
 			name = Release;
 		};
