@@ -36,13 +36,33 @@ class HomeTableViewController: BaseTableViewController {
         if userLogin{
             loadData()
         }
-        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: kTableViewCellIndentifier)
-//        tableView.estimatedRowHeight = 200
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        //MARK: - 刷新控件
+//        refreshControl = UIRefreshControl()
+//        let refreshView = UIView()
+//        refreshView.backgroundColor = UIColor.redColor()
+//        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
+//        refreshControl?.addSubview(refreshView)
+//        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        
+            refreshControl = HomeRefreshControl()
+        
+        
+        
+//            refreshControl?.endRefreshing()
+        
+        //注册二个cell
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
+        
+        tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
+        
+        /*  iOS 8 结合autolayout自动高度
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        */
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
-    private func loadData(){
+    @objc private func loadData(){
         Status.loadStatus { (models, error) -> () in
             if error != nil{
                 return
@@ -135,7 +155,11 @@ class HomeTableViewController: BaseTableViewController {
 }
 extension HomeTableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIndentifier, forIndexPath: indexPath) as! StatusTableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIndentifier, forIndexPath: indexPath) as! StatusTableViewCell
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(statuses![indexPath.row]), forIndexPath: indexPath) as! StatusTableViewCell
+        
+        
         cell.status = statuses![indexPath.row]
 //        cell.textLabel?.text = statuses![indexPath.row].text
 //        cell.detailTextLabel?.text = statuses![indexPath.row].user?.name
@@ -151,7 +175,7 @@ extension HomeTableViewController{
             return height
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kTableViewCellIndentifier) as! StatusTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(statuses![indexPath.row])) as! StatusTableViewCell
         let height = cell.rowHeight(status)
         
         rowCache[status.id] = height

@@ -31,6 +31,14 @@ class WeiBoUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+//        let app = XCUIApplication()
+//        app.navigationBars["首页"].buttons["navigationbar pop"].tap()
+//        app.tabBars.buttons["\\U6761\\U5f62\\U7801"].tap()
+//        app.buttons["\\U6211\\U7684\\U540d\\U7247"].tap()
+//        app.navigationBars["\\U6211\\U7684\\U540d\\U7247"].buttons["\\U4e8c\\U7ef4\\U7801\\U626b\\U63cf"].tap()
+//        app.navigationBars["\\U4e8c\\U7ef4\\U7801\\U626b\\U63cf"].buttons["\\U5173\\U95ed"].tap()
+        
     }
     
 }

@@ -63,6 +63,13 @@ class Status: NSObject {
     
     var user:User?
     
+    
+    var retweeted_status:Status?
+    
+    var pictureURLS:[NSURL]?{
+        return retweeted_status != nil ? retweeted_status?.storedPicURLS : storedPicURLS
+    }
+    
     init(dict:[String:AnyObject]){
         super.init()
         setValuesForKeysWithDictionary(dict)
@@ -75,6 +82,12 @@ class Status: NSObject {
             user = User(dict: value as! [String:AnyObject])
             return
         }
+        
+        if  "retweeted_status" == key{
+            retweeted_status = Status(dict: value as! [String:AnyObject])
+            return
+        }
+        
             super.setValue(value, forKey: key)
     }
     
@@ -110,7 +123,11 @@ class Status: NSObject {
         for status in list{
             
             //swift2.0新语法守护
-            guard let url = status.storedPicURLS else{
+//            guard let url = status.storedPicURLS else{
+//                continue
+//            }
+            
+            guard let url = status.pictureURLS else{
                 continue
             }
             let middleImageurl = status.bmiddle_picUrl
@@ -121,7 +138,7 @@ class Status: NSObject {
                 dispatch_group_leave(group)
             })
             
-            for url in status.storedPicURLS!{
+            for url in status.pictureURLS!{
                 print(url)
                 
                 dispatch_group_enter(group)

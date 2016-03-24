@@ -59,15 +59,17 @@ class StatusPictureView: UICollectionView {
             let key = status?.bmiddle_picUrl?.absoluteString
             print("key:" + key!)
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key)
-            let size = CGSizeMake(image.size.width * 0.5, image.size.height * 0.5)
+            
+            let size = image == nil ? CGSizeZero  : CGSizeMake(image.size.width * 0.5, image.size.height * 0.5)
             return size
         }
         //4.配图为4张
         let width = 90
         let margin = 10
+        pictureViewLayout.itemSize = CGSize(width: width, height: width)
         if  count == 4{
             let viewWidth = CGFloat(width * 2 + margin)
-            pictureViewLayout.itemSize = CGSize(width: width, height: width)
+            
             return CGSize(width: viewWidth, height: viewWidth)
         }
         //5.配图为其他张数
@@ -129,6 +131,7 @@ class PictureViewCell:UICollectionViewCell{
     
     private lazy var pictureImageView:UIImageView = {
         let view = UIImageView()
+        view.contentMode = UIViewContentMode.ScaleToFill
         return view
     }()
     

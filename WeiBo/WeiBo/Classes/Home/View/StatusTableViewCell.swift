@@ -11,6 +11,16 @@ import UIKit
 import SnapKit
 import SDWebImage
 
+enum StatusTableViewCellIdentifier:String
+{
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+    //如果在枚举中利用sattus修饰一个方法 相当于类中class方法 
+    static func cellID(status:Status) ->String{
+        return status.retweeted_status != nil ? ForwardCell.rawValue : NormalCell.rawValue
+    }
+}
 
 let collectionCellIdentifier = "collectionCellIdentifier"
 let kWidth  = UIScreen.mainScreen().bounds.size.width
@@ -26,7 +36,7 @@ class StatusTableViewCell: UITableViewCell {
             headerView.status = status
             contentLabel.text = status?.text
             //根据配图的尺寸
-            pictureView.status = status
+            pictureView.status = status?.retweeted_status != nil ? status?.retweeted_status : status
             let size = pictureView.calculateImageSize()
             pictureViewWidthCons?.constant = size.width
             pictureViewHeightCons?.constant = size.height
@@ -62,7 +72,7 @@ class StatusTableViewCell: UITableViewCell {
     }
     
     
-    private func setUpUI(){
+    func setUpUI(){
         contentView.addSubview(headerView)
         contentView.addSubview(contentLabel)
         contentView.addSubview(footerView)
@@ -78,14 +88,14 @@ class StatusTableViewCell: UITableViewCell {
             make.top.equalTo(headerView.snp_bottom).offset(20)
             make.left.equalTo(headerView).offset(10)
         }
-        pictureView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(contentLabel)
-            make.width.equalTo(200)
-            make.height.equalTo(200)
-            make.top.equalTo(contentLabel.snp_bottom).offset(10)
-        }
-        pictureViewWidthCons = pictureView.getConstraintWidth()
-        pictureViewHeightCons = pictureView.getConstraintHeight()
+//        pictureView.snp_makeConstraints { (make) -> Void in
+//            make.left.equalTo(contentLabel)
+//            make.width.equalTo(200)
+//            make.height.equalTo(200)
+//            make.top.equalTo(contentLabel.snp_bottom).offset(10)
+//        }
+//        pictureViewWidthCons = pictureView.getConstraintWidth()
+//        pictureViewHeightCons = pictureView.getConstraintHeight()
         
         footerView.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(kWidth)
@@ -102,7 +112,7 @@ class StatusTableViewCell: UITableViewCell {
     private lazy var headerView:StatusHeaderView = StatusHeaderView()
 
     
-    private lazy var contentLabel:UILabel = {
+    lazy var contentLabel:UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.size.width - 20
@@ -110,11 +120,11 @@ class StatusTableViewCell: UITableViewCell {
     }()
     
     private lazy var pictureViewLayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    private lazy var pictureView:StatusPictureView = StatusPictureView()
+    lazy var pictureView:StatusPictureView = StatusPictureView()
 //    UICollectionView(frame: CGRectZero, collectionViewLayout: self.pictureViewLayout)
     
     
-    private lazy var footerView:StatusFooterView = StatusFooterView()
+    lazy var footerView:StatusFooterView = StatusFooterView()
     
     
 //    private func setUpPictureView(){
