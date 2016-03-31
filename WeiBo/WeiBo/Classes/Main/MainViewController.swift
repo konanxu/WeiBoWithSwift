@@ -32,7 +32,11 @@ class MainViewController: UITabBarController {
     
     
     func composeBtnClick(){
-        print(__FUNCTION__)
+//        print(__FUNCTION__)
+        
+        let comVC = ComposeViewController()
+        let nav = UINavigationController(rootViewController: comVC)
+        presentViewController(nav, animated: true, completion: nil)
     }
     
     private func setupComposeBtn(){

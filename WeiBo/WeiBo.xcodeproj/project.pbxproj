@@ -27,6 +27,7 @@
 		2F8F7D5F1CA30A7500A2B611 /* StatusNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7D5E1CA30A7500A2B611 /* StatusNormalTableViewCell.swift */; };
 		2F8F7D611CA3C1FA00A2B611 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8F7D601CA3C1FA00A2B611 /* HomeRefreshView.xib */; };
 		2F8F7D631CA3C5D500A2B611 /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7D621CA3C5D500A2B611 /* HomeRefreshControl.swift */; };
+		2F8F7DF51CABC39200A2B611 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8F7DF41CABC39200A2B611 /* ComposeViewController.swift */; };
 		2FCB1F051C97AC8700F07D37 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB1F041C97AC8700F07D37 /* OAuthViewController.swift */; };
 		2FCFBA6A1C8F1D0F001E7873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */; };
 		2FCFBA6C1C8F1D0F001E7873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCFBA6B1C8F1D0F001E7873 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		2FD88B811C97E1320099644A /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B801C97E1320099644A /* NetworkTools.swift */; };
 		2FD88B891C985D9B0099644A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B881C985D9B0099644A /* UserAccount.swift */; };
 		2FD88B8C1C9AA25F0099644A /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD88B8B1C9AA25F0099644A /* Status.swift */; };
+		2FEA93C31CACC2A500C054B2 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEA93C21CACC2A500C054B2 /* PlaceholderTextView.swift */; };
 		3AA47538692D571F0438B9D2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3033409625F5ADD5A755790B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,7 @@
 		2F8F7D5E1CA30A7500A2B611 /* StatusNormalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalTableViewCell.swift; sourceTree = "<group>"; };
 		2F8F7D601CA3C1FA00A2B611 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
 		2F8F7D621CA3C5D500A2B611 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
+		2F8F7DF41CABC39200A2B611 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		2FCB1F041C97AC8700F07D37 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		2FCFBA661C8F1D0F001E7873 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCFBA691C8F1D0F001E7873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		2FD88B871C980D540099644A /* WeiBo-Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WeiBo-Bridge.h"; path = "WeiBo/WeiBo-Bridge.h"; sourceTree = "<group>"; };
 		2FD88B881C985D9B0099644A /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		2FD88B8B1C9AA25F0099644A /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		2FEA93C21CACC2A500C054B2 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		3033409625F5ADD5A755790B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B917F192B108330DB6A6D6D4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,15 @@
 			path = Popover;
 			sourceTree = "<group>";
 		};
+		2F8F7DF31CABC36100A2B611 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				2F8F7DF41CABC39200A2B611 /* ComposeViewController.swift */,
+				2FEA93C21CACC2A500C054B2 /* PlaceholderTextView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		2FCB1F031C97AC5D00F07D37 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +269,7 @@
 		2FCFBA971C8F2A69001E7873 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2F8F7DF31CABC36100A2B611 /* Compose */,
 				2FCB1F031C97AC5D00F07D37 /* OAuth */,
 				2FD3D3231C95CE24000A28FD /* Others */,
 				2FCFBA981C8F2A69001E7873 /* Common */,
@@ -611,7 +625,9 @@
 				2FD3D3251C95CE64000A28FD /* SegueHandlerType.swift in Sources */,
 				2F8879821C958DC200B484D5 /* PopoverPresentationController.swift in Sources */,
 				2F6BBCE71C971141007C7B93 /* Tools.swift in Sources */,
+				2F8F7DF51CABC39200A2B611 /* ComposeViewController.swift in Sources */,
 				2F8F7D5F1CA30A7500A2B611 /* StatusNormalTableViewCell.swift in Sources */,
+				2FEA93C31CACC2A500C054B2 /* PlaceholderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

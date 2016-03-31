@@ -94,9 +94,18 @@ class Status: NSObject {
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
-    class func loadStatus(finished:(models:[Status]?,error:NSError?) ->()){
+    class func loadStatus(since_id:Int,max_id:Int, finished:(models:[Status]?,error:NSError?) ->()){
         let path = "2/statuses/home_timeline.json"
-        let paramers = ["access_token":UserAccount.loadAccount()!.access_token!]
+        var paramers = ["access_token":UserAccount.loadAccount()!.access_token!]
+        
+        
+        if  since_id > 0{
+            paramers["since_id"] = "\(since_id)"
+        }
+        if max_id > 0{
+            paramers["max_id"] = "\(max_id - 1)"
+        }
+        
         NetworkTools.shareNetworkTools().GET(path, parameters: paramers, success: { (_, JSON) -> Void in
 //            let result = JSON["statuses"] as! [[String:AnyObject]]
 //            let Status(dict: result )
@@ -116,6 +125,11 @@ class Status: NSObject {
     
     
     class func cacheStatusImages(list:[Status],finished:(models:[Status]?,error:NSError?) ->()){
+        
+        
+        if list.count == 0{
+           finished(models: list, error: nil) 
+        }
         
         let group = dispatch_group_create()
         

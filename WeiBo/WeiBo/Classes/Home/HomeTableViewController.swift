@@ -17,16 +17,12 @@ class HomeTableViewController: BaseTableViewController {
             tableView.reloadData()
         }
     }
+    var pullupRefreshFlag = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         if !userLogin{
            vistorView!.setUpInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
            return
@@ -36,20 +32,9 @@ class HomeTableViewController: BaseTableViewController {
         if userLogin{
             loadData()
         }
-        //MARK: - 刷新控件
-//        refreshControl = UIRefreshControl()
-//        let refreshView = UIView()
-//        refreshView.backgroundColor = UIColor.redColor()
-//        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
-//        refreshControl?.addSubview(refreshView)
-//        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         
             refreshControl = HomeRefreshControl()
-        
-        
-        
-//            refreshControl?.endRefreshing()
-        
+            refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         //注册二个cell
         tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         
@@ -62,12 +47,32 @@ class HomeTableViewController: BaseTableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
+    
     @objc private func loadData(){
-        Status.loadStatus { (models, error) -> () in
+        var since_id = statuses?.first?.id ?? 0
+        var max_id = 0
+        if pullupRefreshFlag {
+            since_id = 0
+            max_id = statuses?.last?.id ?? 0
+        }
+        
+        Status.loadStatus(since_id,max_id: max_id) { (models, error) -> () in
+            
+            self.refreshControl?.endRefreshing()
             if error != nil{
                 return
             }
-            self.statuses = models
+            if  since_id > 0{
+                self.statuses = models! + self.statuses!
+            }else if(max_id > 0){
+                self.statuses = self.statuses! + models!
+                self.pullupRefreshFlag = false
+            }
+            else{
+                self.statuses = models
+            }
+            
+            
         }
         
     }
@@ -159,10 +164,18 @@ extension HomeTableViewController{
         
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(statuses![indexPath.row]), forIndexPath: indexPath) as! StatusTableViewCell
         
-        
-        cell.status = statuses![indexPath.row]
+        let status = statuses![indexPath.row]
+        cell.status = status
 //        cell.textLabel?.text = statuses![indexPath.row].text
 //        cell.detailTextLabel?.text = statuses![indexPath.row].user?.name
+        
+        //判断是否到了最后一个cell
+        let count = statuses?.count ?? 0
+        if indexPath.row == (count - 1){
+            pullupRefreshFlag = true
+            loadData()
+        }
+        
         return cell
     }
     
